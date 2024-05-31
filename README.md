@@ -1,6 +1,6 @@
 Bengali Literature Web Forum!
 
-![Screenshot 2024-04-30 231002](https://github.com/abirhasan1299/literature-forum/assets/71751671/fb79e524-123d-4cd9-8805-82d40ec8bcb8)
+![Screenshot 2024-04-30 230932](https://github.com/abirhasan1299/literature-forum/assets/71751671/9424cfd9-afb1-42f8-939d-d41463eddfd0)
 
 ![Screenshot 2024-04-30 231002](https://github.com/abirhasan1299/literature-forum/assets/71751671/89661f20-3cf6-4b2c-aa93-3882b3c6604d)
 
