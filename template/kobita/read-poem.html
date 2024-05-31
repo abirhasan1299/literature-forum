@@ -1,0 +1,152 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}{{obj.poem_name}}{% endblock title %}
+    {% block style %}
+
+    <link rel="stylesheet" href="{% static 'css/read-poem.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    
+    {% endblock style %} 
+
+{% block content %}
+
+
+    <div class="row">
+        {% include 'messages.html' %}
+        <div class="col-sm-7">
+            <div class="title">
+                <h1>{{obj.poem_name}}</h1>
+            </div>
+            <div class="extra">
+                <div class="d-flex justify-content-start ">
+                    <div class="date">
+                        <img src="{% static 'gif/clock.png' %}" width="30px" alt=""> <span>{{obj.date|naturaltime}}</span> 
+                    </div>
+                    <div class="view">
+                        <img src="{% static 'images/eye.png' %}" width="30px" alt=""><span> {{view_data}}</span> 
+                    </div>
+                    <div class="author">
+                        <img src="{% static 'gif/man.png' %}" width="30px" alt=""> <span>{{obj.author}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detail">
+                <br>
+                <p>
+                    {{obj.poem_description|linebreaks}}
+            
+                </p>
+            </div>
+            <div class="share">
+                <div class="shares">
+                    <h3>শেয়ার করুন <img src="{% static 'gif/share.png' %}" width="40px" alt=""></h3>
+                    <div class="d-flex justify-content-center">
+                        <hr width="80%">
+                    </div>
+                </div>
+                <div class="link">
+                    <div class="d-flex justify-content-center">
+                        <div class="facebook">
+                            <a href="#"><img src="{% static 'gif/facebook.png' %}" alt=""></a>
+                        </div>
+                        <div class="messenger">
+                            <a href="#"><img src="{% static 'gif/messenger.png' %}" alt=""></a>
+                        </div>
+                        <div class="whatsapp">
+                            <a href="#"><img src="{% static 'gif/whatsapp.png' %}" alt=""></a>
+                        </div>
+                        <div class="tiktok">
+                            <a href="#"><img src="{% static 'gif/tik-tok.png' %}" alt=""></a>
+                        </div>
+                        <div class="youtube">
+                            <a href="#"><img src="{% static 'gif/youtube.png' %}" alt=""></a>
+                        </div>
+                        <div class="telegram">
+                            <a href="#"><img src="{% static 'gif/telegram.png' %}" alt=""></a>
+                        </div>
+                        <div class="telegram">
+                            <a href="#"><img src="{% static 'gif/twitter.png' %}" alt=""></a>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="author_det">
+            {% for a in author %}
+            <img src="{% static 'gif/writer (2).png' %}" width="50px" alt=""> <a href="/profile/public/@/{{a.id}}/" style="text-decoration:none;"> <strong>লেখক পরিচিতি</strong> <span id="author_name">({{obj.author}})</span></a>
+            <div class="bd">
+                
+               <div class="d-flex">
+                <span>জন্মঃ {{a.dob}}</span>
+                <span>মৃত্যুঃ {{a.death}}</span>
+               </div>
+            </div>
+            <div class="bio">
+                <p>
+                    {{a.bio|truncatechars:100}}
+                     ................
+                </p>
+            </div>
+            <div class="d-flex justify-content-end">
+                <a href="/profile/public/@/{{a.id}}/" role="button" class="btn btn-primary"> বিস্তারিত <img src="{% static 'gif/right-arrow.png' %}" width="30px" alt=""> </a>
+            </div>
+            {% endfor %}
+            </div>
+            <div class="cmt">
+                
+                <div class="content">
+                    <h4><img src="{% static 'images/chat.png' %}" width="50px" alt=""> (<span>{{cmt_data}}টি</span>)</h4>
+                </div>
+              
+                {% if user.is_authenticated %}
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex">
+                        <div class="box">
+                            <textarea class="form-control" name="comment" id="comment" cols="45" rows="5" placeholder="মন্তব্য করুন"></textarea>
+                            <input type="hidden" value="{{obj.id}}" name="id">
+                        </div>
+                        <div class="button">
+                            <button type="submit" class="btn btn-danger"> Submit <img src="{% static 'gif/press-button.png' %}" width="30px" alt=""></button>
+                        </div>
+                    </div>
+                </form>
+                {% endif %}
+            </div>
+            <hr style="color:palevioletred;">
+            <div class="cmt_show">
+                {% for c in cmt %}
+                <div class="write">
+                    <div class="d-flex justify-content-start">
+                        <div class="profile">
+                            <img src="{% static 'gif/writer.png' %}" width="70px" style="border-radius: 7px;" alt="">
+                        </div>
+                        <div class="name">
+                            <strong style="color: steelblue;"> {{c.fullname}} </strong><br>
+                            <img src="{% static 'gif/chronometer.png' %}" width="20px" alt=""> <span style="font-size: 13px;">{{c.date_time|naturaltime}}</span>
+                            <div class="context">
+                                {{c.cmt|linebreaks}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <h1 style="margin-top: 5%;color:grey;"><img src="{% static 'gif/1st-prize.png' %}" width="50px" alt=""> সম্পর্কিত আরো কবিতা</h1>
+            <hr>
+            <div class="aro">
+                <ol>
+                    {% for r in related_poem %}
+                    <li><a href="/kobita/read-poem/{{r.id}}/{{r.poem_name}}/">{{r.poem_name}}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

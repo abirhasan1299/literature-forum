@@ -1,0 +1,223 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Profile{% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}">  
+<link rel="stylesheet" href="{% static 'css/kobi_jibon.css' %}">
+{% endblock style %}
+{% block content %}
+<style>
+</style>
+{% for y in x %}
+      <div class="row">
+        <div class="col-sm-7" id="x">
+
+          <div class="d-flex">
+            <div class="image">
+                <img src="
+                  {% if datas.gender == 'মেয়ে' %}
+                    {% static 'gif/girl.png' %}
+                  {% else %}
+                    {% static 'gif/man.png' %}
+                  {% endif %}
+                " width="150px" alt="">
+            </div>
+            <div class="text_short">
+                <strong style="color:black;">{{y.first_name}} {{y.last_name}} <img src="{% static 'gif/3rd-place.png' %}" width="30px" style="margin-left: 20px;" alt=""></strong>
+                <div class="dob">
+                    <span>জন্মঃ {{datas.dob}}</span>
+                    <span id="dob">মৃত্যুঃ {{datas.death}}</span>
+                </div>
+                <div class="category">
+                  <div class="d-flex">
+                    <span class="badge text-bg-primary">{{datas.tags_1}}</span>
+                    <span class="badge text-bg-danger">{{datas.tags_2}}</span>
+                    <span class="badge text-bg-warning">{{datas.tags_3}}</span>
+                  </div>
+                </div>
+                <div class="eff">
+                  <div class="d-flex">
+                    <span>গল্প (0টি) </span>
+                    <span id="data">কবিতা (0টি)</span>
+                    <span id="data">উপন্যাস (0টি)</span>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="qrcode">
+                  <img src="/media/qrcode/{{datas.qr_code_name}}" width="150px">
+              </div>
+          </div>
+          <p id="text" style="color:black;">
+            {{datas.bio}}
+            <hr>
+          </p>
+
+          <div class="additional_data">
+            <div class="d-flex justify-content-between">
+              <div>
+                  <h3><img src="{% static 'gif/safety.png' %}" width="50px"> ব্যক্তিগত তথ্য </h3>
+              </div>
+              <div>
+                <span></span>
+              </div>
+            </div>
+            <div class="dat">
+             <table class="table table-hover">
+                <tr>
+                  <th>Object</th>
+                  <th>Status</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <td>Nick Name</td>
+                    <td>{{datas.nickname}}</td>
+                  </tr>
+                  <tr>
+                    <td>Joined</td>
+                    <td>{{y.date_joined|naturaltime}}</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td>{{y.email}}</td>
+                  </tr>
+                  <tr>
+                    <td>Relationship Status</td>
+                    <td>{{datas.relationship_status}}</td>
+                  </tr>
+                  <tr>
+                    <td>Favourite Color</td>
+                    <td>{{datas.fav_clr}}</td>
+                  </tr>
+                  <tr>
+                    <td>Educational Qualification</td>
+                    <td>{{datas.edu_qual}} in {{datas.depart_sub}}</td>
+                  </tr>
+                  <tr>
+                    <td>Educational Institute</td>
+                    <td>{{datas.edu_ins}}</td>
+                  </tr>
+                  <tr>
+                    <td>Profession</td>
+                    <td>{{datas.profession}}</td>
+                  </tr>
+                  {% for y in x %}
+                    {{x.username}}
+                  {% endfor %}
+                  <tr>
+                      <td>Social Connection</td>
+
+                      <td><a style="padding:5px;" href="{{datas.fb}}"><img src="{% static 'gif/facebook.png' %}"  width="30px" alt="facebook"></a>
+                      <a style="padding:5px;" href="{{datas.youtube}}"><img src="{% static 'gif/youtube.png' %}"  width="30px" alt="youtube"></a>
+                       <a style="padding:5px;" href="{{datas.insta}}"><img src="{% static 'gif/instagram.png' %}"  width="30px" alt="Instagram"></a>
+                       <a style="padding:5px;" href="{{datas.fb}}"><img src="{% static 'gif/whatsapp.png' %}"  width="30px" alt="whatsapp"></a>
+                      </td> 
+      
+                  </tr>
+                </tbody>
+             </table>
+            </div>
+          </div>
+        </div>
+<style>
+  .list ul li a{
+    text-decoration:underline;
+    color:steelblue;
+  }
+</style>
+        <div class="col-sm-5">
+            <div class="list">
+              <ol>
+                <li id="story" style="color:black;"> গল্পগ্রন্থ </li>
+                    <ul id="story_list">
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                      <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    </ul>
+                <li id="poem" style="color:black;">কাব্যগ্রন্থ</li>
+                  <ul id="poem_list">
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                  </ul>
+                  <li id="novel" style="color:black;">উপন্যাস</li>
+                  <ul id="novel_list">
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                    <li><a href="#">Lorem ipsum dolor sit </a></li>
+                  </ul>
+              </ol>
+            </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="shares">
+            <h3 style="color:black;" >শেয়ার করুন <img src="{% static 'gif/share.png' %}" width="40px" alt=""></h3>
+            <div class="d-flex justify-content-center">
+              <hr width="50%">
+            </div>
+          </div>
+          <div class="link">
+            <div class="d-flex justify-content-center">
+              <div class="facebook">
+                <a href="#"><img src="{% static 'gif/facebook.png' %}" alt=""></a>
+              </div>
+              <div class="messenger">
+                <a href="#"><img src="{% static 'gif/messenger.png' %}" alt=""></a>
+              </div>
+              <div class="whatsapp">
+                <a href="#"><img src="{% static 'gif/whatsapp.png' %}" alt=""></a>
+              </div>
+              <div class="tiktok">
+                <a href="#"><img src="{% static 'gif/tik-tok.png' %}" alt=""></a>
+              </div>
+              <div class="youtube">
+                <a href="#"><img src="{% static 'gif/youtube.png' %}" alt=""></a>
+              </div>
+              <div class="telegram">
+                <a href="#"><img src="{% static 'gif/telegram.png' %}" alt=""></a>
+              </div>
+              <div class="telegram">
+                <a href="#"><img src="{% static 'gif/twitter.png' %}" alt=""></a>
+              </div>
+              <br><br><br>
+            </div>
+          </div>
+        </div>
+{% endfor %}
+{% endblock content %}

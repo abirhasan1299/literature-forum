@@ -1,0 +1,111 @@
+
+
+@font-face {
+    font-family: kalpurush;
+    src: url("../font/kalpurush.ttf") format("truetype");
+}
+@font-face {
+  font-family:cartoon;
+  src:url("../font/cartoon.ttf") format("truetype");
+
+}
+@font-face {
+  font-family:blazed;
+  src:url("../font/blazed.ttf") format("truetype");
+}
+body {
+  font-family: sans-serif, kalpurush;
+  
+}
+.container {
+  background-color: #a5f3fc;
+}
+.image {
+  margin-top: 5%;
+  padding: 10px;
+}
+.qrcode img{
+  margin-top: 5px;
+  margin-left: 10%;
+}
+.text_short {
+  margin-top: 10%;
+  padding: 5px;
+}
+
+#dob {
+  margin-left: 30px;
+}
+
+.additional_data h3{
+  font-weight: bolder;
+  color:#0d9488;
+  padding:5px;
+}
+
+.text_short strong{
+  font-weight: bolder;
+  font-size: 23px;
+}
+.dob,.eff{
+  padding:5px;
+}
+#data{
+  margin-left: 10px;
+}
+.dob span{
+  color:purple;
+  font-weight: bolder;
+}
+.eff span{
+  color:#71717a;
+}
+#text{
+  font-size: 20px;
+  text-align:justify;
+  font-weight: lighter;
+}
+.link a {
+  margin-left: 15px;
+}
+
+.link a img {
+  width: 40px;
+}
+
+.shares h3 {
+  text-align: center;
+  margin-top: 5%;
+}
+#text::first-letter{
+  font-size:4rem;
+}
+#story,#poem,#novel{
+  font-size: 3rem;
+}
+#share{
+  color:grey;
+  font-family: cartoon;
+  font-size:3rem;
+}
+#share i{
+  color:red;
+}
+.icons{
+  padding:10px;
+  font-weight: bold;
+  font-size:25px;
+}
+.icons a{
+  padding-right: 15px;
+}
+#header{
+  font-family: kalpurush;
+  color:white;
+  text-align: center;
+  padding:10px;
+  
+}
+.list li{
+  padding:5px;
+}

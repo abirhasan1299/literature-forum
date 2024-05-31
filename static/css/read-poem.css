@@ -1,0 +1,84 @@
+@font-face {
+    font-family: kalpurush;
+    src: url("../font/kalpurush.ttf") format("truetype");
+}
+body{
+    font-family: 'Courier New', Courier, monospace,kalpurush;
+}
+.title h1{
+    margin-top: 10%;
+    font-size: 3.5rem;
+    color: grey;
+    font-weight: bolder;
+}
+.detail p{
+    text-align: left;
+    font-size: 20px;
+}
+.aro ol li{
+    list-style-type:decimal;
+    padding: 5px;
+}
+.aro ol li a{
+    font-size: 18px;
+    color:#5b21b6;
+}
+.extra img{
+    margin-left: 20px;
+}
+.extra span{
+    font-size: 15px;
+}
+#author_name{
+    color:peru;
+    font-weight: bolder;
+}
+.author_det strong{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.bio p{
+    color:ghostwhite;
+    
+}
+.bd span{
+    color:slateblue;
+    padding: 5px;
+    margin-left: 10%;
+    font-weight: bolder;
+}
+.author_det{
+    background-color: #374151;
+    border: 1px solid black;
+    padding:10px;
+}
+.link a {
+    margin-left: 25px;
+}
+
+.link a img {
+    width: 40px;
+}
+.shares h3 {
+    text-align: center;
+    margin-top: 5%;
+    color: grey;
+}
+.cmt{
+    margin-top: 3%;
+}
+.box textarea{
+    border:2px solid peru;
+}
+.cmt_show{
+    overflow: scroll;
+    padding: 10px;
+    height: 400px;
+}
+.context{
+    margin-top:15px;
+    padding:5px;
+}
+.reply{
+    margin-top:10px;
+}

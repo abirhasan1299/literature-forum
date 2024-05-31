@@ -1,0 +1,225 @@
+
+@font-face {
+    font-family: tangail;
+    src: url("../font/tangail.ttf") format("truetype");
+}
+@font-face {
+    font-family: bokul;
+    src: url("../font/bokul.ttf") format("truetype");
+}
+@font-face {
+    font-family: kumar;
+    src: url("../font/kumar.ttf") format("truetype");
+}
+@font-face {
+    font-family: kalpurush;
+    src: url("../font/kalpurush.ttf") format("truetype");
+}
+body{
+    background-color:ghostwhite;
+    font-family: 'Courier New', Courier, monospace,kalpurush;
+    
+}
+#icon{
+    width: 25px;
+}
+#logo{
+    width: 70px;
+}
+.text h1{
+    text-align: center;
+    color:ghostwhite;
+    font-family: bokul;
+    font-size: 5rem;
+}
+.text img{
+    width:50%;
+}
+#sunray{
+    width: 60%;
+}
+#row_1{
+    background-color: #6d28d9;
+}
+#row_2{
+    height: 300px;
+    background-color: #ffd95b;
+    background-image: url("../images/poetry.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#row_3{
+    background-color: #1e293b;
+}
+#row_5{
+    background-color: #ffffff;
+    background-image: url("../images/birds.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+}
+#row_4{
+    background-color:#ffffff ;
+    background-image: url("../images/flower-pot.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+}
+#btnx img{
+    width: 40px;
+}
+#navlink li{
+    padding-left: 30px;
+}
+.img img{
+    width:70%;
+    height: 50%;
+    border: 1px solid red;
+    clip-path: circle(40%);
+}
+#com_box{
+        width: 30px;
+}
+#let{
+    font-size: 13px;
+}
+#space{
+    margin-left: 8%;
+}
+#span{
+    font-size: 13px;
+}
+#ribbon{
+    width: 100px;
+}
+#weekly{
+    margin-top: 5%;
+    transform: rotate(-40deg);
+    font-family: tangail;
+}
+.images{
+    width: 60%;
+    border: 3px solid ghostwhite;
+    margin-right: 0px;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+.images img{
+    height: 300px;
+}
+#ns{
+    margin-top: 60%;
+}
+#ns h2{
+    color: ghostwhite;
+    font-weight: bolder;
+}
+#ns1{
+    transform: rotate(-40deg);
+}
+#ns3{
+    transform: rotate(40deg);
+}
+.tag{
+    margin-top: 5%;
+}
+.list li a{
+    text-decoration: none;
+    color:black;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.list li{
+    padding: 5px;
+}
+ol{
+    margin-top: 5%;
+}
+ol li{
+    padding: 5px;
+}
+.text{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.text h2{
+    font-weight: bolder;
+}
+.recent ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+.recent ul li{
+    padding:5px;
+    list-style-type:square;
+}
+.story ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+.story ul li{
+    padding:5px;
+    list-style-type:square;
+}
+.novel ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+.novel ul li{
+    padding:5px;
+    list-style-type:square;
+}
+.qote h4{
+    text-align: center;
+}
+.qote h5{
+    font-weight: bolder;
+    text-align: right;
+}
+
+#row_6{
+    background: #ffffff;
+    background-image: url("../images/birds.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#row_7 {
+    background: #ffffff;
+    background-image: url("../images/birds.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+#row_8{
+    background: #ffffff;
+    background-image: url("../images/birds.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+}
+.sign h1{
+    text-align: center;
+    margin-top: 5%;
+    font-weight: bolder;
+}
+#end{
+    background-color: #ffffff;
+}
+.subs{
+    margin-bottom: 3%;
+}
+#tag a{
+    font-weight: bolder;
+    color: ghostwhite;
+    padding: 2px;
+
+}

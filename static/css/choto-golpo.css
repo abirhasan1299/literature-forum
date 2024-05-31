@@ -1,0 +1,248 @@
+@font-face {
+    font-family: kalpurush;
+    src: url("../font/kalpurush.ttf") format("truetype");
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace, kalpurush;
+}
+
+#tops {
+    margin-top: 5%;
+    width: 70%;
+}
+
+#search {
+    border: 2px solid purple;
+}
+
+#title {
+    margin-top: 5%;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.boxR {
+    background: #f43f5e;
+    min-height: 200px;
+    background-image: url("../catimg/kiss.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+
+}
+
+#lr {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxS {
+    background: #10b981;
+    min-height: 200px;
+    background-image: url("../catimg/people.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#social {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxNM {
+    background: #84cc16;
+    min-height: 200px;
+    background-image: url("../catimg/running.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+#natureman {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxU {
+    background: #f97316;
+    min-height: 200px;
+    background-image: url("../catimg/imagination.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#unreal {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxSym {
+    background: #34d399;
+    min-height: 200px;
+    background-image: url("../catimg/question-mark.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+#symbol {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.box18 {
+    background: #3730a3;
+    min-height: 200px;
+    background-image: url("../catimg/man.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#eight {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxH {
+    background: #3f6212;
+    min-height: 200px;
+    background-image: url("../catimg/history.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+#history {
+    text-decoration: none;
+    color: yellow;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxSci {
+    background: #14b8a6;
+    min-height: 200px;
+    background-image: url("../catimg/atom-symbol.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+#science {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxM {
+    background: #c4b5fd;
+    min-height: 200px;
+    background-image: url("../catimg/psychology.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#mind {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxD {
+    background: #881337;
+    min-height: 200px;
+    background-image: url("../catimg/detection.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#detective {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxBas {
+    background: #f43f5e;
+    min-height: 200px;
+    background-image: url("../catimg/struggle.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+
+}
+#real {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxC {
+    background: #22c55e;
+    min-height: 200px;
+    background-image: url("../catimg/laugh.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#commedy {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxHo {
+    background: #0369a1;
+    min-height: 200px;
+    background-image: url("../catimg/living-room.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: contain;
+}
+
+#travel {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}
+
+.boxT {
+    background: #c2410c;
+    min-height: 200px;
+    background-image: url("../catimg/travel.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+#house {
+    text-decoration: none;
+    color: ghostwhite;
+    font-weight: bolder;
+    text-shadow: -10px 10px 10px grey;
+}

@@ -1,0 +1,90 @@
+@font-face {
+    font-family: kalpurush;
+    src: url("../font/kalpurush.ttf") format("truetype");
+}
+@font-face {
+    font-family: tangail;
+    src: url("../font/tangail.ttf") format("truetype");
+}
+body{
+font-family: 'Courier New', Courier, monospace,kalpurush;
+background:#ffffff;
+}
+.tag{
+    margin-top: 5%;
+}
+.text h2{
+    color:#475569;
+    font-weight: bolder;
+}
+.list{
+    margin-top: 2%;
+}
+.list ol li{
+    padding:5px;
+}
+.list ol li a{
+    font-size: 20px;
+    font-weight: bolder;
+}
+#author{
+    text-decoration: none;
+    color:#292524;
+}
+.badge span{
+    color:green;
+}
+.icon{
+    padding-left: 30px;
+}
+.author_list{
+    margin-top: 3%;
+    padding: 5px;
+}
+.author_list ul li{
+    padding: 5px;
+}
+.author_list ul li a{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #475569;
+}
+#tops {
+    margin-top: 5%;
+    width: 70%;
+}
+.head h1{
+    text-align: center;
+    font-weight: lighter;
+    font-family: tangail;
+    color:#475569;
+}
+.maxRead{
+    margin-top:3%;
+}
+.maxRead #poem{
+    font-size: 20px;
+    color:#e11d48;
+}
+.maxRead #author{
+    font-size: 18px;
+    text-decoration: none;
+    color:grey;
+}
+.list_new{
+        margin-top: 3%;
+}
+.list_new ol li a{
+    font-size: 20px;
+    padding:3px;
+}
+.link a{
+    margin-left: 25px;
+}
+.link a img{
+    width: 40px;
+}
+.shares h3{
+    text-align: center;
+    margin-top: 5%;
+}

@@ -1,0 +1,79 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block style %}
+ <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock style %}
+{% block title %}কবিতা লিখুন{% endblock title %}
+
+{% block content %}
+<style>
+    .container{
+        background-color:#4338ca;
+    }
+    .x{
+        width:60%;
+    }
+    #title{
+        border:1px solid grey;
+        width:65%;
+    }
+    #choices{
+        border:1px solid grey;
+        border-radius:10px;
+        width:35%;
+    }
+    #form_field{
+        background:#fb7185;
+    }
+    #area{
+        border:1px solid grey;
+    }
+    @media screen and (max-width:600px){
+        .x{
+            width:100%;
+        }
+    }
+</style>
+<div class="row" id="form_field">
+    <div class="d-flex justify-content-center">
+        <div class="x">
+        <center><img src="{% static 'images/poetry.png' %}" width="200px"></center>
+        <div class="d-flex justify-content-center">
+            <form method="post" style="width:90%;margin-top:3%;">
+                 {% csrf_token %}
+                 <div class="d-flex justify-content-start">
+                    <input id="title" type="text" class="form-control" name="title" placeholder="কবিতার নাম" required>
+
+                    <span style="padding-left:10px;"></span>
+
+                    <select id="choices" name="category"  required >
+                    <option selected disabled value=""> ক্যাটাগরি নির্বাচন</option>
+                    <option value="কিশোর">কিশোর</option>
+                    <option value="রোম্যান্টিক">রোম্যান্টিক</option>
+                    <option value="আঠারো উর্ধ্ব">আঠারো উর্ধ্ব</option>
+                    <option value="ভালোবাসা-প্রেম">ভালোবাসা-প্রেম</option>
+                    <option value="দুঃখের কবিতা">দুঃখের কবিতা</option>
+                    <option value="জাগরন মূলক">জাগরন মূলক</option>
+                    <option value="সমাজকেন্দ্রিক">সমাজকেন্দ্রিক</option>
+                    <option value="দেশাত্মবোধক">দেশাত্মবোধক</option>
+                    <option value="প্রকৃতিপ্রেম">প্রকৃতিপ্রেম</option>
+                    <option value="শিশু কবিতা">শিশু কবিতা</option>
+                </select>
+                </div>
+                <br>
+                <input type="hidden" name="view" value="0">
+                <input type="hidden" name="author" value="{{user.first_name}} {{user.last_name}}">
+                <textarea id="area" class="form-control" name="detail" rows="10" cols="20" placeholder="কবিতা লিখ" required></textarea><br>
+                <div class="d-flex justify-content-start">
+                    <button id="button" type="submit" class="btn btn-success">প্রেরন করুন <img src="{% static 'gif/send-message.png' %}" width="25px"></button>
+                    
+                </div>
+                 <br><br><br>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}

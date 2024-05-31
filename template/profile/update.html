@@ -1,0 +1,135 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}Update|Profile{% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}">  
+{% endblock style %}
+{% block content %}
+
+<div class="row">
+
+<div class="">
+    <div class="d-flex justify-content-center">
+        {% include 'messages.html' %}
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <h3 style="color:grey;margin-top:5%;"><img src="{% static 'gif/svg.png' %}" width="30px" alt=""> ব্যক্তিগত তথ্য </h3>
+        <hr width="30%">
+        <div class="d-flex justify-content-around">
+            <input type="text" class="form-control" name="nickname" placeholder="ডাক নাম">
+            <span style="padding-left:10px;"></span>
+            <select class="form-control" name="gender">
+                <option selected disabled>লিঙ্গ নির্বাচন</option>
+                <option value="ছেলে">ছেলে</option>
+                <option value="মেয়ে">মেয়ে</option>
+                <option value="উভলিঙ্গ">উভলিঙ্গ</option>
+            </select>
+        </div>
+        <br>
+        <textarea class="form-control"  name="bio" rows="10" cols="20" placeholder="জীবনী লিখ" required></textarea><br>
+        <div class="d-flex justify-content-around">
+
+            <input class="form-control" type="number" name='mobile' placeholder="মোবাইল">
+            <span style="padding-left:10px;"></span>
+            <select class="form-control" name="rltn">
+                <option selected disabled>সম্পর্ক অবস্থা <img src="{% static 'gif/down-arrow.png' %}" width="20px"></option>
+                <option value="একাকী">একাকী</option>
+                <option value="বিবাহিত">বিবাহিত</option>
+                <option value="তালাকপ্রাপ্ত">তালাকপ্রাপ্ত</option>
+                <option value="জটিল">জটিল</option>
+                <option value="পৃথক">পৃথক</option>
+                <option value="দেহ-বিলাসী">দেহ-বিলাসী</option>
+            </select>
+        </div>
+        <br>
+        <h3 style="color:grey;"><img src="{% static 'gif/price-tag.png' %}" width="30px" alt=""> টাইটেল যুক্ত করুন </h3>
+         <hr width="30%">
+        <p style="color:red;">(যেকোনো তিনটি অভিন্ন পছন্দনীয় টাইটেল যুক্ত নির্বাচন করুন)</p>
+        <div class="d-flex justify-content-around">
+            <select class="form-control" name="t1">
+                <option selected disabled>পছন্দনীয় টাইটেল-১</option>
+                <option value="গল্পকার">গল্পকার</option>
+                <option value="কবি">কবি</option>
+                <option value="ঔপন্যাসিক">ঔপন্যাসিক</option>
+                <option value="কথাসাহিত্যিক">কথাসাহিত্যিক</option>
+                <option value="গানলেখক">গানলেখক</option>
+                <option value="প্রাবন্ধিক">প্রাবন্ধিক</option>
+                <option value="দার্শনিক">দার্শনিক</option>
+            </select>
+            <span style="padding-left:10px;"></span>
+            <select class="form-control" name="t2">
+                <option selected disabled>পছন্দনীয় টাইটেল-২</option> 
+                <option value="গল্পকার">গল্পকার</option>
+                <option value="কবি">কবি</option>
+                <option value="ঔপন্যাসিক">ঔপন্যাসিক</option>
+                <option value="কথাসাহিত্যিক">কথাসাহিত্যিক</option>
+                <option value="গানলেখক">গানলেখক</option>
+                <option value="প্রাবন্ধিক">প্রাবন্ধিক</option>
+                <option value="দার্শনিক">দার্শনিক</option>
+            </select>
+            <span style="padding-left:10px;"></span>
+            <select class="form-control" name="t3">
+                <option selected disabled>পছন্দনীয় টাইটেল-৩</option>
+                <option value="গল্পকার">গল্পকার</option>
+                <option value="কবি">কবি</option>
+                <option value="ঔপন্যাসিক">ঔপন্যাসিক</option>
+                <option value="কথাসাহিত্যিক">কথাসাহিত্যিক</option>
+                <option value="গানলেখক">গানলেখক</option>
+                <option value="প্রাবন্ধিক">প্রাবন্ধিক</option>
+                <option value="দার্শনিক">দার্শনিক</option>
+            </select>
+            
+        </div>
+        <br>
+        <h3 style="color:grey;"><img src="{% static 'gif/manager.png' %}" width="30px" alt=""> পেশা ও প্রিয়</h3>
+        <hr width="30%">
+        <div class="d-flex justify-content-around"> 
+            <input class="form-control" type="text" placeholder="পেশা" name="profession">
+            <span style="padding-left:10px;"></span>
+            <input class="form-control" type="text" placeholder="প্রিয় রং" name="clr">
+            <span style="padding-left:10px;">জন্ম তারিখ: </span>
+            <input class="form-control" type="date" name="dob">
+            <br>
+        </div>
+        <br>
+        <h3 style="color:grey;"><img src="{% static 'gif/reading.png' %}" width="30px" alt=""> শিক্ষা ও প্রতিষ্ঠান</h3>
+        <hr width="30%">
+        <div class="d-flex justify-content-around"> 
+            <select class="form-control" name="edu_q">
+                <option selected disabled>শিক্ষাগত যোগ্যতা</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="B.Com">B.Com</option>
+                <option value="BBA">BBA</option>
+                <option value="HSC">HSC</option>
+                <option value="SSC">SSC</option>
+                <option value="PSC">PSC</option>
+                <option value="PSC">PSC</option>
+            </select>
+            <span style="padding:10px;">in</span>
+             <input class="form-control" type="text" name="dept_sub" placeholder="বিষয়">
+            <span style="padding:10px;"></span>
+            <input class="form-control" type="text" placeholder="শিক্ষা প্রতিষ্ঠান" name="edu_ins">
+            
+        </div>
+        <br>
+        <h3 style="color:grey;"><img src="{% static 'gif/social-media.png' %}" width="30px" alt=""> সামাজিক মাধ্যম</h3>
+        <hr width="30%">
+        <div class="d-flex justify-content-around"> 
+            <input type="text" name="fb" placeholder="ফেসবুক লিংক" class="form-control">
+            <span style="padding:10px;"></span>
+            <input type="text" name="youtube" placeholder="ইউটিউব লিংক" class="form-control">
+            <span style="padding:10px;"></span>
+            <input type="text" name="insta" placeholder="ইন্সটাগ্রাম লিংক" class="form-control">
+             
+            <br>
+        </div>
+        <br>
+        <button type="submit" class="form-control btn btn-success">আপডেট <img src="{% static 'gif/updated.png' %}" width="30px"></button>
+   </form>
+
+</div>
+   
+</div>
+
+{% endblock content %}

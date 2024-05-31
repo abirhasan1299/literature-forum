@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends "basic.html" %}
+{% load static %}
+{% block title %}{% for d in data %}
+{{d.title}} {% endfor %}
+{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+<style>
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  font-family: cursive,kalpurush;
+  background: #4f46e5;
+}
+#name{
+  color:#374151;
+  font-weight: bolder;
+  font-size: 5rem;
+  text-indent: 20px;
+}
+#eye{
+  width:30px;
+}
+.description{
+}
+</style>
+{% endblock style %}
+
+{% block content %}
+{% for d in data %}
+
+<div class="container">
+    <div class="row">
+        <h1 id="name">{{d.title}} </h1>
+  <div class="description">
+      <p style="color:#f7fee7;text-indent: 50px;line-height:25px;font-size:25px;">
+        {{d.description}}
+      </p>
+  </div>
+  <div class=""></div>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock content %}

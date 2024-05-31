@@ -1,0 +1,12 @@
+{% load humanize %}
+{% block content %}
+
+<ul>
+    <ul>
+        {% for i in data %}
+        <li>{{i.name}}-{{i.age}}</li>
+        {% endfor %}
+    </ul>
+</ul>
+
+{% endblock content %}

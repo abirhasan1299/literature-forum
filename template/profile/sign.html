@@ -1,0 +1,35 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}">
+<style>
+    #back{
+        background:#60a5fa;
+    }
+</style>
+{% endblock style %}
+{% block title %}Register{% endblock title %}
+
+
+{% block content %}
+<div class="row" id="back">
+
+    <h1 style="color:purple;font-weight:bolder;text-align:center;margin-top:4%;"><img src="{% static 'video/add-user.png' %}" width="80px"></h1>
+   <div class="d-flex justify-content-center">
+    <form  method="post" style="width:50%;">
+                                       
+        {% csrf_token %}
+
+        {{ form|crispy }}
+        <br>
+
+        <button style="font-family:cursive;" type="submit" class="btn btn-danger form-control" id="submit">Register</button>
+        <br><br><br>
+    </form>
+    
+   </div>
+   
+</div>
+{% endblock content %}
+

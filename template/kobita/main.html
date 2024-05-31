@@ -1,0 +1,299 @@
+{% extends '../basic.html' %}
+{% load static %}
+{% block title %}কবিতা{% endblock title %}
+{% block style %}
+ <link rel="stylesheet" href="{% static 'css/kobita.css' %}">
+ <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock style %}
+
+{% block content %}
+<style>
+    body{
+        background:#ffffff;
+    }
+</style>
+<div class="row">
+        <div class="col-sm-7">
+            <center>
+                <div class="d-flex" id="tops">
+                    <input class="form-control" type="search" name="search" id="search" placeholder="কবিতা খুঁজুন">
+                    <button type="submit" class="bg-light" style="border-radius: 40%;border:none;"><img style="width: 30px;"
+                            src="images/loupe.png" alt=""></button>
+                </div>
+            </center>
+            <div class="tag d-flex justify-content-center">
+                <img src="{% static 'gif/bird.gif' %}" style="width: 300px;" alt="">
+            </div>
+<a href="/kobita/create-poem/" style="text-decoration:none;">
+            <div class="d-flex justify-content-start">
+                <div class="post_box">
+                    <center>
+                        <h4 style="color:#fbcfe8;"><img src="{% static 'gif/instagram-stories.png' %}" style="width:30px;" alt=""> কবিতা লিখুন</h4>
+                    </center> 
+                    <div class="input_box">
+                        <div class="d-flex justify-content-around">
+<style>
+    .xxx{
+        border:none;
+
+    }
+    .post_box{
+        border:none;
+        width:90%;
+        padding:10px;
+        border-radius:20px;
+        background:#f43f5e;
+    }
+    .input{
+        width:100%;
+    }
+</style>
+                            <div class="xxx">
+                                <img width="50px" src="{% static 'gif/xxx.png' %}" alt="picture">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Wrtie Something" class="form-control" style="border:1px solid grey;border-radius:100px;margin-top:1%;width:90%;" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </a>
+            <div class="text">
+                <h2><img src="{% static 'images/most-recent.png' %}" style="width:50px;" alt=""> সম্প্রতি প্রকাশিত</h2>
+            </div>
+<style>
+    .list ol li a{
+        color:steelblue;
+        font-weight:bolder;
+        text-decoration:underline;
+    }
+</style>
+            <div class="list">
+                <ol>
+                    {% for p in poem %}
+                        <li><a href="/kobita/read-poem/{{p.id}}/{{p.poem_name}}/">{{p.poem_name}}</a> | <img src="{% static 'gif/writer.png' %}" style="width:30px;" alt=""> <a href="#" id="author">{{p.author}}</a></li>
+                    {% endfor %}
+
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <h1 style="margin-top: 5%;"> লেখক <img src="{% static 'gif/writer (1).png' %}" style="width: 50px;" alt=""> <br> পরিচিতি ও দক্ষতা </h1>
+            <div class="badge">
+                <div class="d-flex">
+                    <div class="icon1">
+                        <img src="{% static 'gif/quality.png' %}" width="40px" alt=""><br>
+                        <span>Expert</span>
+                    </div>
+                    <div class="icon">
+                        <img src="{% static 'gif/1st-prize.png' %}" width="40px" alt=""><br>
+                        <span>Professional</span>
+                    </div>
+                    <div class="icon">
+                        <img src="{% static 'gif/ribbon.png' %}" width="40px" alt=""><br>
+                        <span>Intermediate</span>
+                    </div>
+                    <div class="icon">
+                        <img src="{% static 'gif/medal.png' %}" width="40px" alt=""><br>
+                        <span>Beginner</span>
+                    </div>
+                    <div class="icon">
+                        <img src="{% static 'gif/new.png' %}" width="40px" alt=""><br>
+                        <span>General</span>
+                    </div>
+                </div>
+            </div>
+            <div class="author_list">
+                <ul>
+                    {% for u in badge_author %}
+
+                        <li><a href="/profile/public/@/{{u.id}}/">{{u.first_name}} {{u.last_name}}</a> <img src="gif/new.png" width="25px" alt=""></li>
+    
+                   {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1><img src="{% static 'gif/priority.png' %}" width="50px" alt=""> অধিকবার পঠিত</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for m in most_read %}
+                    <li><a href="/kobita/read-poem/{{m.id}}/{{m.poem_name}}/" id="poem">{{m.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{m.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="text-align: center;"><img src="{% static 'gif/kiss.png' %}" style="width: 50px;" alt=""> রোম্যান্টিক কবিতাসমূহ</h1>
+            <hr>
+            <div class="list_new">
+                <ol>
+                    {% for rp in romantic_poem %}
+                    <li><a href="/kobita/read-poem/{{rp.id}}/{{rp.poem_name}}/" id="poem">{{rp.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{rp.author}}</li>
+                   {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1 style="font-family:kalpurush;"><img src="{% static 'gif/country.png' %}" width="50px" alt=""> দেশাত্মবোধক কবিতাসমূহ</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for cr in country %}
+                    <li><a href="/kobita/read-poem/{{cr.id}}/{{cr.poem_name}}/" id="poem">{{cr.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{cr.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="text-align: center;"><img src="{% static 'gif/female.png' %}" style="width: 50px;" alt=""> আঠারো উর্ধ্ব  কবিতাসমূহ</h1>
+            <hr>
+            <div class="list_new">
+                <ol>
+                    {% for ru in eighteen_plus %}
+                    <li><a href="/kobita/read-poem/{{ru.id}}/{{ru.poem_name}}/" id="poem">{{ru.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{ru.author}}</li>
+                   {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1 style="font-family:kalpurush;"><img src="{% static 'gif/population.png' %}" width="50px" alt=""> সমাজকেন্দ্রিক কবিতাসমূহ</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for cr in social %}
+                    <li><a href="/kobita/read-poem/{{cr.id}}/{{cr.poem_name}}/" id="poem">{{cr.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{cr.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="text-align: center;"><img src="{% static 'gif/boy.png' %}" style="width: 50px;" alt=""> কিশোর কবিতাসমূহ</h1>
+            <hr>
+            <div class="list_new">
+                <ol>
+                    {% for ru in kishor %}
+                    <li><a href="/kobita/read-poem/{{ru.id}}/{{ru.poem_name}}"u id="poem">{{ru.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{ru.author}}</li>
+                   {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1 style="font-family:kalpurush;"><img src="{% static 'gif/leaf.png' %}" width="50px" alt=""> প্রকৃতিপ্রেম কবিতাসমূহ</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for cr in nature %}
+                    <li><a href="/kobita/read-poem/{{cr.id}}/{{cr.poem_name}}/" id="poem">{{cr.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{cr.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="text-align: center;"><img src="{% static 'gif/stimming.png' %}" style="width: 50px;" alt=""> জাগরণমূলক কবিতাসমূহ</h1>
+            <hr>
+            <div class="list_new">
+                <ol>
+                    {% for ru in wake %}
+                    <li><a href="/kobita/read-poem/{{ru.id}}/{{ru.poem_name}}/" id="poem">{{ru.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{ru.author}}</li>
+                   {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1 style="font-family:kalpurush;"><img src="{% static 'gif/love-birds.png' %}" width="50px" alt=""> প্রেম-ভালোবাসার কবিতাসমূহ</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for cr in love %}
+                    <li><a href="/kobita/read-poem/{{cr.id}}/{{cr.poem_name}}/" id="poem">{{cr.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{cr.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <h1 style="text-align: center;"><img src="{% static 'gif/sad.png' %}" style="width: 50px;" alt=""> দুঃখের কবিতাসমূহ</h1>
+            <hr>
+            <div class="list_new">
+                <ol>
+                    {% for ru in sad %}
+                    <li><a href="/kobita/read-poem/{{ru.id}}/{{ru.poem_name}}/" id="poem">{{ru.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{ru.author}}</li>
+                   {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div class="col-sm-6">
+            <div class="head">
+                <h1 style="font-family:kalpurush;"><img src="{% static 'gif/daughter.png' %}" width="50px" alt=""> শিশু কবিতাসমূহ</h1>
+            </div>
+            <div class="maxRead">
+                <ol>
+                    {% for cr in child %}
+                    <li><a href="/kobita/read-poem/{{cr.id}}/{{cr.poem_name}}/" id="poem">{{cr.poem_name}}</a> | <img src="{% static 'gif/1st-prize.png' %}" width="30px" alt=""> {{cr.author}}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="shares">
+            <h3>শেয়ার করুন <img src="{% static 'gif/share.png' %}" width="40px" alt=""></h3>
+            <div class="d-flex justify-content-center">
+                <hr width="50%">
+            </div>
+        </div>
+        <div class="link">
+            <div class="d-flex justify-content-center">
+                <div class="facebook">
+                    <a href="#"><img src="{% static 'gif/facebook.png' %}" alt=""></a>
+                </div>
+                <div class="messenger">
+                    <a href="#"><img src="{% static 'gif/messenger.png' %}" alt=""></a>
+                </div>
+                <div class="whatsapp">
+                    <a href="#"><img src="{% static 'gif/whatsapp.png' %}" alt=""></a>
+                </div>
+                <div class="tiktok">
+                    <a href="#"><img src="{% static 'gif/tik-tok.png' %}" alt=""></a>
+                </div>
+                <div class="youtube">
+                    <a href="#"><img src="{% static 'gif/youtube.png' %}" alt=""></a>
+                </div>
+                <div class="telegram">
+                    <a href="#"><img src="{% static 'gif/telegram.png' %}" alt=""></a>
+                </div>
+                <div class="telegram">
+                    <a href="#"><img src="{% static 'gif/twitter.png' %}" alt=""></a>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

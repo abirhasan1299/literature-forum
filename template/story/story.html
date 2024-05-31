@@ -1,0 +1,273 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block style %}
+
+<link rel="stylesheet" href="{% static '/css/choto-golpo.css' %}">
+<link rel="stylesheet" href="{% static '/css/index.css' %}">
+
+{% endblock style %}
+{% block title %}ছোটগল্প{% endblock title %}
+
+
+{% block content %}
+ <div class="row">
+    <center> {% include "messages.html" %} </center>
+        <div class="col-sm-5">
+            <center>
+                <div class="d-flex" id="tops">
+                    <input class="form-control" type="search" name="search" id="search" placeholder="গল্পের নাম লিখুন">
+                    <button type="submit" class="bg-light" style="border-radius: 40%;"><img style="width: 30px;" src="{% static 'images/loupe.png' %}"
+                            alt=""></button>
+                </div>
+            </center>
+        </div>
+        <div class="col-sm-7">
+            <h1 id="title">গল্পগুচ্ছ</h1>
+        </div>
+    </div>
+    <br>
+<style>
+    
+</style>
+    <div class="row">
+        
+            <a href="/story/create-story/" style="text-decoration:none;">
+            <div class="d-flex justify-content-center">
+                <div class="post_box">
+                    <center>
+                        <h4 style="color:#fbcfe8;"><img src="{% static 'gif/instagram-stories.png' %}" style="width:30px;" alt=""> গল্প লিখুন</h4>
+                    </center> 
+                    <div class="input_box">
+                        <div class="d-flex justify-content-around">
+<style>
+    .xxx{
+        border:none;
+
+    }
+    .post_box{
+        border:none;
+        width:50%;
+        padding:10px;
+        border-radius:20px;
+        background:#f43f5e;
+    }
+    .input{
+        width:100%;
+    }
+    @media screen and (max-width:600px){
+        .post_box{
+            width:100%;
+        }
+    }
+</style>
+                            <div class="xxx">
+                                <img width="50px" src="{% static 'gif/xxx.png' %}" alt="picture">
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="Wrtie Something" class="form-control" style="border:1px solid grey;border-radius:100px;margin-top:1%;width:90%;" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </a>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/story/collection/রোম্যান্টিক/" role="button" id="lr">
+                <div class="boxR">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>রোম্যান্টিক</h4>
+                            <span>(২৬)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+
+            <a href="/story/collection/সামাজিক/" role="button" id="social">
+                <div class="boxS">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>সামাজিক</h4>
+                            <span>(৩০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div class="col-sm-4">
+            <a href="/story/collection/প্রকৃতি ও মানুষ/" role="button" id="natureman">
+                <div class="boxNM">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>প্রকৃতি ও মানুষ</h4>
+                            <span>(৬০)</span>
+                        </center>
+                    </div> 
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/story/collection/কাল্পনিক/" role="button" id="unreal">
+                <div class="boxU">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>কাল্পনিক</h4>
+                            <span>(৬৩)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+    
+            <a href="/story/collection/প্রতীকধর্মী/" role="button" id="symbol">
+                <div class="boxSym">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>প্রতীকধর্মী</h4>
+                            <span>(৩০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+        <div class="col-sm-4">
+            <a href="/story/collection/আঠারো উর্ধ্ব/" role="button" id="eight">
+                <div class="box18">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>আঠারো উর্ধ্ব</h4>
+                            <span>(৬০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/story/collection/বৈজ্ঞানিক/" role="button" id="science">
+                <div class="boxSci">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>বৈজ্ঞানিক</h4>
+                            <span>(৬৩)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+    
+            <a href="/story/collection/মনস্তাত্ত্বিক/" role="button" id="mind">
+                <div class="boxM">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>মনস্তাত্ত্বিক</h4> 
+                            <span>(৮০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+        <div class="col-sm-4">
+            <a href="/story/collection/ঐতিহাসিক/" role="button" id="history">
+                <div class="boxH">
+                    <div class="d-flex justify-content-end" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>ঐতিহাসিক</h4>
+                            <span>(৬০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/story/collection/কমেডি/" role="button" id="commedy">
+                <div class="boxC">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>কমেডি</h4>
+                            <span>(৬৩)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+    
+            <a href="/story/collection/বাস্তব/" role="button" id="real">
+                <div class="boxBas">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>বাস্তব</h4>
+                            <span>(৮০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+        <div class="col-sm-4">
+            <a href="/story/collection/ডিটেকটিভ/" role="button" id="detective">
+                <div class="boxD">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>ডিটেকটিভ</h4>
+                            <span>(৬০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/story/collection/ঘরোয়া/" role="button" id="house">
+                <div class="boxHo">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>ঘরোয়া</h4>
+                            <span>(৬১)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4">
+    
+            <a href="/story/collection/ভ্রমণ কাহিনী/" role="button" id="travel">
+                <div class="boxT">
+                    <div class="d-flex justify-content-center" id="rom">
+                        <center style="margin-top: 10%;">
+                            <h4>ভ্রমণ কাহিনী</h4>
+                            <span>(৮০)</span>
+                        </center>
+                    </div>
+                </div>
+            </a>
+    
+        </div>
+        <div class="col-sm-4">
+            
+        </div>
+    </div>
+    <br>
+{% endblock content %}

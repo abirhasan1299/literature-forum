@@ -1,0 +1,112 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Write|Story{% endblock title %}
+{% block style %}
+<link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock style %}
+{% block content %}
+<style>
+.x{
+    margin-top:5%;
+    width:60%;
+}
+#button{
+    width:30%;
+}
+#title{
+    border:1px solid grey;
+}
+#choices{
+     border:2px solid #6d28d9;
+     border-radius:10px;
+}
+#area{
+    border:1px solid grey;
+}
+#story_form{
+    background:#fb7185;
+}
+@media screen and (max-width: 650px){
+    .x{
+        width:100%;
+    }
+}
+</style>
+<div class="row" id="story_form">
+    <div class="d-flex justify-content-center">
+        <div class="x">
+        <div class="d-flex justify-content-center">
+            <img src="{% static 'gif/book.png' %}" width="100px" alt="picture">
+            {% include 'messages.html' %}
+        </div>
+        <br><br>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="d-flex justify-content-start">
+                <input name="title" id="title" class="form-control" type="text" placeholder="গল্পের নাম" required>
+                <span style="padding-left:10px;"></span>
+                <select  name="choices" id="choices" required>
+                <option selected disabled value="">ক্যাটেগরি নির্বাচন করুন</option>
+                <option value="রোম্যান্টিক">রোম্যান্টিক</option>
+                <option value="সামাজিক">সামাজিক</option>
+                <option value="প্রকৃতি ও মানুষ">প্রকৃতি ও মানুষ</option>
+                <option value="কাল্পনিক ও অতিপ্রাকৃত">কাল্পনিক ও অতিপ্রাকৃত</option>
+                <option value="প্রতীকধর্মী">প্রতীকধর্মী</option>
+                <option value="আঠারো উর্ধ্ব">আঠারো উর্ধ্ব</option>
+                <option value="বৈজ্ঞানিক">বৈজ্ঞানিক</option>
+                <option value="মনস্তাত্তিক">মনস্তাত্তিক</option>
+                <option value="ঐতিহাসিক">ঐতিহাসিক</option>
+                <option value="কমেডি">কমেডি</option>
+                <option value="বাস্তব">বাস্তব</option>
+                <option value="ডিটেকিভ">ডিটেকিভ</option>
+                <option value="ঘরোয়া">ঘরোয়া</option>
+                <option value="ভ্রমণ কাহিনী">ভ্রমণ কাহিনী</option>
+                <option value="শুধু গল্প">শুধু গল্প</option>
+            </select>
+            </div>
+            <br>
+            <span id="output"></span>
+            <input id="file" type="file" class="form-control" name="files" required>
+            <br>
+            <textarea id="area" name="about" class="form-control" rows="7" placeholder="গল্প লিখ" required></textarea>
+            <br>
+            <button type="submit" class="form-control btn btn-primary" id="button"><img src="{% static 'images/arrow-right.png' %}"  width="30px"> Send  </button>
+        </form>
+        <br><br><br><br>
+    </div>
+    
+    </div>
+</div>
+{% endblock content %}
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+  
+        $('#file').on('change', function() {
+
+            
+            var validExtensions = ["jpg","bmp","tmp","jpeg","gif","png"];
+            var file = $(this).val().split('.').pop();
+            
+            const size = (this.files[0].size / 1024 / 1024).toFixed(2);
+         
+            if (size > 2) {
+                $("#output").html('<b style="color:red;"> * ছবিটি 2MB এর বেশি হওয়া যাবে না </b>');
+
+                $('#button').prop("disabled",true);
+            } else {
+                if (validExtensions.indexOf(file) == -1) {
+                    $("#output").html('<b style="color:red;"> * ফাইল ফরমেট উপযুক্ত নয়</b>');
+                    $('#button').prop("disabled",true);
+                }else{
+                    $("#output").html('');
+                    $('#button').removeAttr("disabled");
+                }
+                
+            }
+            
+        });
+    </script>
+{% endblock js %}

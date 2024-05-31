@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{% extends "basic.html" %}
+{% load static %}
+{% block title %}{% for n in name_tag %} {{n.tag}} {% endfor %}{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+{% endblock style %}
+
+{% block content %}
+<style>
+*{
+  margin:0px;
+  padding:0px;
+}
+body{
+  font-family: cursive,kalpurush;
+  background:#4f46e5;
+}
+.i img{
+  width:100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.i img:hover{
+  opacity: 0.3;
+
+}
+.i{
+    width: 320px;
+    position: relative;
+}
+.i .content{
+  position: absolute;
+  left: 5%;
+  top:50%;
+  width: 100%;
+}
+.content h4{
+  font-weight: bolder;
+  color:teal;
+  text-decoration: underline;
+  text-shadow: 1px 1px #22c55e;
+}
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: grey;
+}
+.te h2{
+  margin-top:10px;
+  color:ghostwhite;
+  padding:10px;
+  text-indent: 10px;
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+.search input{
+  padding:10px;
+  border: 3px solid teal;
+  border-radius: 10px;
+}
+
+</style>
+  <div class="row">
+    <div class="d-flex justify-content-between">
+      <div class="te">
+          <h2>{% for n in name_tag %} {{n.tag}} {% endfor %} গল্পসমূহ</h2>
+      </div>
+    <div class="search">
+        <input type="search"  style="margin-top:20px;" class="form-control" name="search" placeholder=" Search any keywords">
+    </div>
+  </div>
+  </div>
+  
+  <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-4">
+  {% if sata %}
+    {% for s in sata %}
+    <div class="col">
+      <div>
+        
+        <div class="i">
+          <a href="/story/read-story/{{s.id}}/">
+              <img src="/media/{{s.thumb}}/" id="thumb" alt="">
+              <div class="content">
+                  <h4>{{s.title}}</h4>
+                  <div class="d-flex justify-content-around">
+                    <span style="color:black;"><i style="color:#e11d48;" class="bi bi-eye"></i> 20</span>
+
+                    <span style="color:black;"><i style="color:#e11d48;" class="bi bi-chat-square-text"></i> 32</span>
+          
+                  </div>
+              </div>
+          </a>
+           
+            <!-- <div class="d-flex justify-content-around">
+                <div class="t">
+                    <h5><img src="{% static 'thumbnails/right-arrow.png' %}" alt=""> {{s.title}}</h5>
+                </div>
+                <div class="v">
+                    <img src="images/eye.png"  alt=""> {{s.view}}
+                </div>
+                <div class="c">
+                  <img src="images/chat.png" alt="">0
+                </div>
+            </div>
+ -->        </div>
+  
+      </div>
+    </div>
+  
+  {% endfor %}
+  {% else %}
+    <center>
+      <span class="badge bg-danger"><h2>কোনো রেকর্ড পাওয়া যায়নি </h2></span>
+    </center>
+
+  {% endif %}
+  </div>
+    
+
+<br><br>
+<div class="d-flex justify-content-center">
+  <div class="pagination">
+   
+  <a href="#"><img src="thumbnails/left-arrow.png" width="20px" alt=""></a>
+  <a href="#">1</a>
+  <a href="#" class="active">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#"><img src="thumbnails/right-arrow (1).png" width="20px" alt=""></a>
+</div>
+</div>
+  
+  {% endblock content %}

@@ -1,0 +1,88 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+  {% block style %}
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">  
+  {% endblock style %}
+{% block content %}
+
+{% include 'messages.html' %}
+<!-- 
+ <style type="text/css">
+     #row_1{
+ position: relative;
+ }
+#video{
+  position: absolute;
+  bottom:0;
+  z-index: -2;
+  object-fit: cover;
+}
+  </style> -->
+<div class="row" id="row_1">
+ 
+
+<!-- <video id="video" src="{% static 'video/topper.mp4' %}" muted loop autoplay></video> -->
+  <style>
+    .animate__animated.animate__heartbeat {
+  --animate-duration: 5s;
+}
+#btn1{
+  background:#22c55e;
+}
+#btn2{
+  background:#dc2626;
+}
+#btn1,#btn2{
+  width:40%;
+  border:1px solid white;
+  border-radius:10px;
+  height:50px;
+  text-decoration:none;
+  color:ghostwhite;
+
+}
+  </style>
+    <div class="col-sm-6">
+      <div class="text">
+        <h1 class="animate__animated animate__heartBeat" >বাংলার সেরা সাহিত্য </h1>
+        <h1 class="animate__animated animate__heartBeat" >ভান্ডার <img src="{% static 'images/star.png' %}" style="width: 100px;"></h1>
+        <center><img src="{% static 'gif/book_reading.gif' %}" alt=""></center>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="d-flex justify-content-center">
+        <img src="{% static 'images/sun.png' %}" id="sunray" alt="">
+      </div>
+      {% if user.is_authenticated %}
+
+        <div>
+            <h2 style="color:#fdba74;"> স্বাগতম তোমাকে  <img src="{% static 'gif/waving-hand.png' %}" width="50px"></h2>
+            <h1 style="color:#ef4444;text-align:center;" ><img src="{% static 'gif/right.png' %}" width="20px"> {{user.username}} <img src="{% static 'gif/left.png' %}" width="20px"></h1>
+        </div>
+
+      {% else %}
+      <br>
+      <div class="d-flex justify-content-around">
+        <a href="/login/" role="button"  id="btn1"> <center style="margin-top:10px;">লগইন</center> </a>
+        <a href="/registration/" role="button" id="btn2"><center style="margin-top:10px;">রেজিষ্টার</center> </a>
+      </div>
+      <br>
+      <div class="lorem">
+          <h3 style="text-align:center;color:#fef08a;font-weight:bolder;">ছোটগল্প ও কবিতার সমাহার</h3>  
+          <div class="d-flex justify-content-around">
+              <div class="story"> 
+                    5%
+              </div>  
+              <div class="peom"> 
+                  12%
+              </div>
+          </div>
+      </div>
+      <br>
+      {% endif %}
+    </div>
+  </div>
+  </div>
+
+{% endblock content %}
